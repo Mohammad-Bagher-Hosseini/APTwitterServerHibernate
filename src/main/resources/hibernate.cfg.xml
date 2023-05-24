@@ -1,0 +1,26 @@
+<!--
+ ~ Hibernate Search, full-text search for your domain model
+ ~
+ ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later
+ ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+   -->
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">13831383</property>
+        <!--  JDBC connection pool (use the built-in)  -->
+        <property name="connection.pool_size">1</property>
+        <!--  SQL dialect  -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <!--  Enable Hibernate's automatic session context management  -->
+        <property name="current_session_context_class">thread</property>
+        <!--  Disable the second-level cache   -->
+        <property name="show_sql">false</property>
+        <!--  Drop and re-create the database schema on startup  -->
+        <property name="hbm2ddl.auto">update</property>
+        <!--mapping classes -->
+        <mapping class = "entities.user.User"/>
+    </session-factory>
+</hibernate-configuration>
