@@ -4,9 +4,11 @@ import entities.exception.io.FileNotExistException;
 import entities.exception.io.FileNotImageException;
 import entities.exception.io.FileSizeException;
 import entities.exception.io.ImageSizeException;
+import jakarta.persistence.Embeddable;
 
 import java.awt.image.BufferedImage;
 
+@Embeddable
 public class Header extends TwitterImage
 {
     public Header()

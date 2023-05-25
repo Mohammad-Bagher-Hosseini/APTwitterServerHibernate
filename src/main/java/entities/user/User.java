@@ -23,6 +23,8 @@ public class User implements Serializable
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     protected String userName;
+
+    @Embedded
     protected Password passHash;
     protected String name;
     protected String family;
@@ -32,8 +34,14 @@ public class User implements Serializable
     protected LocalDate birthDate;
     protected LocalDate signUpDate;
     protected LocalDate lastChangeDate;
+
+    @Embedded
     protected Avatar avatar;
+
+    @Embedded
     protected Header header;
+
+    @Embedded
     protected Bio bio;
     protected String location;
     protected String website;

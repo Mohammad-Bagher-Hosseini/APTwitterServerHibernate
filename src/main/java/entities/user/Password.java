@@ -1,6 +1,7 @@
 package entities.user;
 
 import entities.exception.password.PasswordHashException;
+import jakarta.persistence.Embeddable;
 
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
@@ -8,9 +9,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
+@Embeddable
 public class Password implements Serializable
 {
     private byte[] passwordHash = null;
+
+    public Password(){}
 
     public Password(String password) throws PasswordHashException
     {

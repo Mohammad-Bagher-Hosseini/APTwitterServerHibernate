@@ -1,6 +1,9 @@
 package model;
 
 import entities.exception.io.ServerInvalidObjectException;
+import entities.exception.io.server.DataNotFoundException;
+import entities.exception.password.InvalidPasswordException;
+import entities.exception.text.TextTooLongException;
 import entities.server.Respond;
 import entities.server.RespondCode;
 
@@ -38,6 +41,16 @@ public class ModelCommandHandler
         catch (ServerInvalidObjectException e)
         {
             return new Respond(RespondCode.INVALID_OBJECT, e.getMessage());
+        } catch (DataNotFoundException e)
+        {
+            return new Respond(RespondCode.INVALID_OBJECT, e.getMessage());
+        } catch (InvalidPasswordException e)
+        {
+            return new Respond(RespondCode.INVALID_OBJECT, e.getMessage());
+        } catch (TextTooLongException e)
+        {
+            return new Respond(RespondCode.INVALID_OBJECT, e.getMessage());
         }
+
     }
 }
