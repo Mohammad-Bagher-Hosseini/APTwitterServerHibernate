@@ -19,7 +19,13 @@ import java.util.List;
 
 public class ModelCommands
 {
-    DatabaseManager databaseManager = new DatabaseManager();
+    private final DatabaseManager databaseManager;
+
+    public ModelCommands()
+    {
+        databaseManager = new DatabaseManager();
+    }
+
     public Respond signUp(ObjectInputStream objectInputStream) throws ServerInvalidObjectException
     {
         User user = ObjectGetter.getObject(objectInputStream, User.class);
